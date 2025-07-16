@@ -310,7 +310,77 @@ DB 접근 순서 및 예외 처리 강화
 UI 이벤트 예외 처리 및 방어 코드 추가  
 → 옵션 선택 및 수량 조절 버튼 등에 대한 예외 처리 강화  
 → 잘못된 입력 또는 비정상 흐름 발생 시 사용자 알림 및 기본 동작으로 복구  
-  
+
+---
+
+## 📁 폴더 구조
+
+WHAT_owner/                   # 사장님 프로그램 (Qt C++ 기반)  
+├── img.qrc                   # 리소스 이미지 등록 파일  
+├── main.cpp                  # 메인 실행 파일  
+├── mainwindow.cpp            # 메인 윈도우 소스  
+├── mainwindow.h              # 메인 윈도우 헤더  
+├── mainwindow.ui             # 메인 윈도우 UI 파일  
+├── orderlist_widget.cpp      # 주문 목록 위젯 소스  
+├── orderlist_widget.h        # 주문 목록 위젯 헤더  
+├── orderlist_widget.ui       # 주문 목록 위젯 UI 파일  
+├── WHAT_owner.pro            # 프로젝트 설정 파일  
+├── WHAT_owner.pro.user       # 사용자 설정 파일  
+├── 📁 ii/                     # 추가 리소스 폴더  
+
+
+WHAT_rider/                   # 라이더 프로그램 (Qt C++ 기반)  
+├── delivery_widget.cpp       # 배달 위젯 소스  
+├── delivery_widget.h         # 배달 위젯 헤더  
+├── delivery_widget.ui        # 배달 위젯 UI 파일  
+├── image.qrc                 # 리소스 이미지 등록 파일  
+├── main.cpp                  # 메인 실행 파일  
+├── mainwindow.cpp            # 메인 윈도우 소스  
+├── mainwindow.h              # 메인 윈도우 헤더  
+├── mainwindow.ui             # 메인 윈도우 UI 파일  
+├── WHAT_rider.pro            # 프로젝트 설정 파일  
+├── WHAT_rider.pro.user       # 사용자 설정 파일  
+├── 📁 ii/                     # 추가 리소스 폴더  
+
+WHAT_user/                    # 사용자 클라이언트 프로그램 (Qt C++ 기반)  
+├── addressbtn.cpp            # 주소 버튼 위젯 소스  
+├── addressbtn.h              # 주소 버튼 위젯 헤더  
+├── addressbtn.ui             # 주소 버튼 위젯 UI 파일  
+├── backup.zip                # 백업 파일  
+├── dbmanager.cpp             # DB 매니저 소스  
+├── dbmanager.h               # DB 매니저 헤더  
+├── image.qrc                 # 리소스 이미지 등록 파일  
+├── main.cpp                  # 메인 실행 파일  
+├── mainwindow.cpp            # 메인 윈도우 소스  
+├── mainwindow.h              # 메인 윈도우 헤더  
+├── mainwindow.ui             # 메인 윈도우 UI 파일  
+├── menu_head.cpp             # 메뉴 상단부 위젯 소스  
+├── menu_head.h               # 메뉴 상단부 위젯 헤더  
+├── menu_head.ui              # 메뉴 상단부 UI 파일  
+├── menu_normal.cpp           # 기본 메뉴 위젯 소스  
+├── menu_normal.h             # 기본 메뉴 위젯 헤더  
+├── menu_normal.ui            # 기본 메뉴 UI 파일  
+├── order_list_widget.cpp     # 주문 리스트 위젯 소스  
+├── order_list_widget.h       # 주문 리스트 위젯 헤더  
+├── order_list_widget.ui      # 주문 리스트 위젯 UI 파일  
+├── rst_main_icon.cpp         # 메인 아이콘 위젯 소스  
+├── rst_main_icon.h           # 메인 아이콘 위젯 헤더  
+├── rst_main_icon.ui          # 메인 아이콘 UI 파일  
+├── sel_menu_info.cpp         # 메뉴 선택 정보 위젯 소스  
+├── sel_menu_info.h           # 메뉴 선택 정보 위젯 헤더  
+├── sel_menu_info.ui          # 메뉴 선택 정보 UI 파일  
+├── selected_menu_widget.cpp  # 선택된 메뉴 위젯 소스  
+├── selected_menu_widget.h    # 선택된 메뉴 위젯 헤더  
+├── selected_menu_widget.ui   # 선택된 메뉴 UI 파일  
+├── struct_and_enum.h         # 구조체 및 열거형 정의  
+├── WHAT.pro                  # 프로젝트 설정 파일  
+├── WHAT.pro.user             # 사용자 설정 파일  
+├── 📁 image/                  # 이미지 리소스 폴더  
+
+├──restaurant_img/               # 가게 이미지 리소스 폴더  
+
+├── README.md  
+
 ---
 
 ## 🖼️ 실행 결과
