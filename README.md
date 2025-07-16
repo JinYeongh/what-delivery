@@ -316,7 +316,7 @@ UI 이벤트 예외 처리 및 방어 코드 추가
 ## 🖼️ 실행 결과
 
 ### 사용자 인터페이스
-<video src="./UI_video/user.webm" controls width="600"></video>
+
 
 ### 라이더/사장님 인터페이스
-<video src="./UI_video/rider_owner.webm" controls width="600"></video>
+
