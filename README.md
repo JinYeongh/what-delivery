@@ -136,3 +136,139 @@
 | `1004_0`            | 라이더 → 서버 | 배달 완료    | 배달 완료, 사장님에게 전달 |
 
 ---
+
+## 데이터베이스 테이블 정의
+
+- **RESOURCE_CATEG**  
+  카테고리별 리소스 이미지 정보  
+  - `CATEGORY_NAME` : 카테고리명 (PK)  
+  - `IMGPATH` : 이미지 경로  
+
+- **COUPON**  
+  브랜드 / 가게 별 쿠폰 정보  
+  - `BRAND_UID` : 브랜드 UID (FK)  
+  - `PLACE_UID` : 가게 UID (FK)  
+  - `TOTAL_DISCOUNT` : 총 할인율  
+  - `ORDER_CONDITIONS` : 주문 조건  
+
+- **COUPON_RANKING**  
+  메뉴 할인 순위 정보  
+  - `BRAND_UID` : 브랜드 UID (FK)  
+  - `PLACE_UID` : 가게 UID (FK)  
+  - `MENU_NAME` : 메뉴명  
+  - `MENU_DISCOUNT` : 할인율  
+
+- **RECENTLY_VIEWED**  
+  최근 본 가게 정보  
+  - `UID` : 회원 UID (FK)  
+  - `BRAND_UID` : 브랜드 UID (FK)  
+  - `PLACE_UID` : 가게 UID (FK)  
+  - `LAST_VIEWED_AT` : 마지막 조회일  
+
+- **USER_LIKE**  
+  회원 찜 정보  
+  - `UID` : 회원 UID (FK)  
+  - `BRAND_UID` : 브랜드 UID (FK)  
+  - `PLACE_UID` : 가게 UID (FK)  
+  - `STAR_POINT` : 별점  
+  - `REVIEW` : 리뷰  
+
+- **ORDER_DETAIL**  
+  주문 상세 정보  
+  - `ORDER_ID` : 주문 ID (FK)  
+  - `MENU_NAME` : 메뉴명  
+  - `MENU_PRICE` : 메뉴 단가  
+  - `MENU_CNT` : 메뉴 수량  
+  - `OPT_NAME_ALL` : 옵션명  
+  - `OPT_PRICE_ALL` : 옵션 가격  
+
+- **USER_ADDRESS**  
+  회원 주소 정보  
+  - `UID` : 회원 UID (FK)  
+  - `ADDRESS_DETAIL` : 상세 주소  
+  - `ADDRESS_NAME` : 주소 명칭  
+  - `ADDRESS_TYPE` : 주소 타입  
+  - `ADDRESS_BASIC` : 기본 주소  
+
+- **RIDER_INFO**  
+  라이더 정보  
+  - `PHONENUMBER` : 전화번호 (PK)  
+  - `CITY` : 지역  
+  - `VEHICLE` : 배달 수단  
+  - `BIRTH` : 생년월일  
+  - `ACCOUNT_NUMBER` : 계좌번호  
+
+- **USER_COUPON**  
+  회원 쿠폰 사용 정보  
+  - `COUPON_NUM` : 쿠폰 번호 (PK)  
+  - `UID` : 회원 UID (FK)  
+  - `PASS` : 사용 여부  
+  - `COUPON_NAME` : 쿠폰명  
+  - `TOTAL_DISCOUNT` : 할인율  
+  - `ORDER_CONDITIONS` : 조건  
+  - `CP_STATUS` : 쿠폰 상태  
+  - `CPNX_DATE` : 유효기간  
+
+- **USER_REVIEW**  
+  회원 리뷰 정보  
+  - `REVIEW_ID` : 리뷰 ID (PK)  
+  - `UID` : 회원 UID (FK)  
+  - `BRAND_UID` : 브랜드 UID (FK)  
+  - `PLACE_UID` : 가게 UID (FK)  
+  - `ORDER_TIME` : 주문 시간  
+  - `MENU` : 메뉴명  
+  - `STAR_POINT` : 별점  
+  - `STAR_FLAVOR` : 맛 별점  
+  - `STAR_QNTY` : 양 별점  
+  - `REVIEW` : 리뷰 내용  
+
+- **ORDER_**  
+  주문 정보  
+  - `ORDER_ID` : 주문 ID (PK)  
+  - `UID` : 회원 UID (FK)  
+  - `BRAND_UID` : 브랜드 UID (FK)  
+  - `PLACE_UID` : 가게 UID (FK)  
+  - `ORDER_TIME` : 주문 시간  
+  - `TOTAL_PRICE` : 총 금액  
+  - `ADDRESS_DETAIL` : 주소  
+  - `STATUS_TO_GO` : 포장 여부  
+  - `STATUS_DISPOSABLE` : 일회용기 여부  
+  - `STATUS_ORDER` : 주문 상태  
+
+- **RESTAURANT_INFO**  
+  가게 정보  
+  - `BRAND_UID` : 브랜드 UID (PK)  
+  - `PLACE_UID` : 가게 UID (PK)  
+  - `OWNER_ID` : 사장님 ID (FK)  
+  - `RST_NOTICE` : 공지사항  
+  - `STAR_POINT` : 별점  
+  - `STAR_QNTY` : 별점 수량  
+  - `STAR_FLAVOR` : 맛 별점  
+  - `RST_NAME` : 가게명  
+  - `FRONT_IMG` : 대표 이미지  
+  - `CATEGORY1` ~ `CATEGORY4` : 카테고리  
+
+- **RST_INFO**  
+  가게 기본 정보  
+  - `BRAND_UID` : 브랜드 UID (FK)  
+  - `PLACE_UID` : 가게 UID (FK)  
+  - `OWNER_ID` : 사장님 ID (FK)  
+  - `RST_NOTICE` : 공지사항  
+  - `STAR_POINT` : 별점  
+  - `STAR_QNTY` : 별점 수량  
+  - `STAR_FLAVOR` : 맛 별점  
+  - `RST_NAME` : 가게명  
+  - `FRONT_IMG` : 대표 이미지  
+  - `CATEGORY1` ~ `CATEGORY4` : 카테고리  
+
+- **SEARCH_INFO**  
+  검사 결과 기록 저장  
+  - `NUM` : 고유 번호 (PK)  
+  - `ADDTIME` : 검사 요청 시간  
+  - `PHONENUMBER` : 회원 전화번호 (FK)  
+  - `STATUS` : 검사 결과 (정상 / 곰팡이)  
+  - `FILENAME` : 저장된 검사 이미지명  
+
+> **SEARCH_INFO는 USER_INFO와 전화번호를 기준으로 1:N 관계**
+
+---
